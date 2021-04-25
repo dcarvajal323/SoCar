@@ -1,6 +1,6 @@
 PETA_ROOT="../petalinux"
 BOOT_PART="/media/ramsey/BOOT"
-ROOT_PART="/media/ramsey/ROOT"
+ROOT_PART="/media/ramsey/ROOTFS"
 BUILD_INC="../build_include"
 
 cd $PETA_ROOT
