@@ -506,3 +506,9 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/system_wrapper
 	at com.xilinx.sdk.startup.InitSDK$12.run(InitSDK.java:449)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 15:12:06 ERROR : Unable to create Hardware Specification Project with specification file: /home/ramsey/SoCar/VivadoProject/SoCar/SoCar.sdk/system_wrapper.hdf
+16:23:08 INFO  : Registering command handlers for SDK TCF services
+16:23:10 INFO  : Launching XSCT server: xsct -n -interactive /home/ramsey/SoCar/VivadoProject/SoCar/SoCar.sdk/temp_xsdb_launch_script.tcl
+16:23:14 INFO  : XSCT server has started successfully.
+16:23:14 INFO  : Successfully done setting XSCT server connection channel  
+16:23:14 INFO  : Successfully done setting SDK workspace  
+16:23:14 INFO  : Processing command line option -hwspec /home/ramsey/SoCar/VivadoProject/SoCar/SoCar.sdk/system_wrapper.hdf.

@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Apr 29 15:00:49 2021
-# Process ID: 60234
+# Start of session at: Thu Apr 29 16:15:32 2021
+# Process ID: 67884
 # Current directory: /home/ramsey/SoCar/VivadoProject/SoCar/SoCar.runs/synth_1
 # Command line: vivado -log system_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_wrapper.tcl
 # Log file: /home/ramsey/SoCar/VivadoProject/SoCar/SoCar.runs/synth_1/system_wrapper.vds

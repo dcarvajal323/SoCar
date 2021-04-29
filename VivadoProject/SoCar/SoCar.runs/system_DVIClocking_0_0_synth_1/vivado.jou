@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Apr 29 14:58:29 2021
-# Process ID: 59758
+# Start of session at: Thu Apr 29 16:13:20 2021
+# Process ID: 67433
 # Current directory: /home/ramsey/SoCar/VivadoProject/SoCar/SoCar.runs/system_DVIClocking_0_0_synth_1
 # Command line: vivado -log system_DVIClocking_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_DVIClocking_0_0.tcl
 # Log file: /home/ramsey/SoCar/VivadoProject/SoCar/SoCar.runs/system_DVIClocking_0_0_synth_1/system_DVIClocking_0_0.vds

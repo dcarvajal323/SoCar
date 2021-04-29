@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
---Date        : Thu Apr 29 14:57:52 2021
+--Date        : Thu Apr 29 16:13:07 2021
 --Host        : ramsey-VirtualBox running 64-bit Ubuntu 20.04.2 LTS
 --Command     : generate_target system.bd
 --Design      : system
@@ -3346,15 +3346,6 @@ entity system is
 end system;
 
 architecture STRUCTURE of system is
-  component system_DVIClocking_0_0 is
-  port (
-    PixelClk5X : in STD_LOGIC;
-    PixelClk : out STD_LOGIC;
-    SerialClk : out STD_LOGIC;
-    aLockedIn : in STD_LOGIC;
-    aLockedOut : out STD_LOGIC
-  );
-  end component system_DVIClocking_0_0;
   component system_AXI_BayerToRGB_1_0 is
   port (
     StreamClk : in STD_LOGIC;
@@ -4000,6 +3991,15 @@ architecture STRUCTURE of system is
     s00_axi_aresetn : in STD_LOGIC
   );
   end component system_pwm_gen_1_0;
+  component system_DVIClocking_0_0 is
+  port (
+    PixelClk5X : in STD_LOGIC;
+    PixelClk : out STD_LOGIC;
+    SerialClk : out STD_LOGIC;
+    aLockedIn : in STD_LOGIC;
+    aLockedOut : out STD_LOGIC
+  );
+  end component system_DVIClocking_0_0;
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TLAST : STD_LOGIC;
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TREADY : STD_LOGIC;

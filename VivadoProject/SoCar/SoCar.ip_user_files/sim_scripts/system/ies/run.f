@@ -79,8 +79,48 @@
   "../../../bd/system/ipshared/ead7/hdl/MIPI_DPHY_Receiver.vhd" \
   "../../../bd/system/ip/system_MIPI_D_PHY_RX_0_0/sim/system_MIPI_D_PHY_RX_0_0.vhd" \
 -endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_clk_wiz.v" \
+  "../../../bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.v" \
+-endlib
+-makelib ies_lib/axi_infrastructure_v1_1_0 \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axi_vip_v1_1_5 -sv \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/d4a8/hdl/axi_vip_v1_1_vl_rfs.sv" \
+-endlib
+-makelib ies_lib/processing_system7_vip_v1_0_7 -sv \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/8c62/hdl/processing_system7_vip_v1_0_vl_rfs.sv" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_processing_system7_0_0/sim/system_processing_system7_0_0.v" \
+-endlib
 -makelib ies_lib/lib_cdc_v1_0_2 \
   "../../../../SoCar.srcs/sources_1/bd/system/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd" \
+-endlib
+-makelib ies_lib/proc_sys_reset_v5_0_13 \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_rst_clk_wiz_0_50M_0/sim/system_rst_clk_wiz_0_50M_0.vhd" \
+-endlib
+-makelib ies_lib/generic_baseblocks_v2_1_0 \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axi_register_slice_v2_1_19 \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axi_data_fifo_v2_1_18 \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/5b9c/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axi_crossbar_v2_1_20 \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_xbar_0/sim/system_xbar_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_DVIClocking_0_0_1/sim/system_DVIClocking_0_0.vhd" \
 -endlib
 -makelib ies_lib/lib_pkg_v1_0_2 \
   "../../../../SoCar.srcs/sources_1/bd/system/ipshared/0513/hdl/lib_pkg_v1_0_rfs.vhd" \
@@ -107,58 +147,74 @@
   "../../../../SoCar.srcs/sources_1/bd/system/ipshared/ec9e/hdl/axi_vdma_v6_3_rfs.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/system/ip/system_axi_vdma_0_0/sim/system_axi_vdma_0_0.vhd" \
+  "../../../bd/system/ip/system_axi_vdma_0_2/sim/system_axi_vdma_0_2.vhd" \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/d57c/src/ClockGen.vhd" \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/d57c/src/SyncAsync.vhd" \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/d57c/src/SyncAsyncReset.vhd" \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/d57c/src/DVI_Constants.vhd" \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/d57c/src/OutputSERDES.vhd" \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/d57c/src/TMDS_Encoder.vhd" \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/d57c/src/rgb2dvi.vhd" \
+  "../../../bd/system/ip/system_rgb2dvi_0_0_1/sim/system_rgb2dvi_0_0.vhd" \
+  "../../../bd/system/ip/system_rst_vid_clk_dyn_0_1/sim/system_rst_vid_clk_dyn_0.vhd" \
+-endlib
+-makelib ies_lib/axi_lite_ipif_v3_0_4 \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/v_tc_v6_1_13 \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/a92c/hdl/v_tc_v6_1_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/v_vid_in_axi4s_v4_0_9 \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/b2aa/hdl/v_vid_in_axi4s_v4_0_vl_rfs.v" \
+-endlib
+-makelib ies_lib/v_axi4s_vid_out_v4_0_10 \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_clk_wiz.v" \
-  "../../../bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.v" \
--endlib
--makelib ies_lib/axi_infrastructure_v1_1_0 \
-  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
--endlib
--makelib ies_lib/axi_vip_v1_1_5 -sv \
-  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/d4a8/hdl/axi_vip_v1_1_vl_rfs.sv" \
--endlib
--makelib ies_lib/processing_system7_vip_v1_0_7 -sv \
-  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/8c62/hdl/processing_system7_vip_v1_0_vl_rfs.sv" \
+  "../../../bd/system/ip/system_v_axi4s_vid_out_0_0_1/sim/system_v_axi4s_vid_out_0_0.v" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/system_video_dynclk_0_mmcm_pll_drp.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/system/ip/system_processing_system7_0_0/sim/system_processing_system7_0_0.v" \
--endlib
--makelib ies_lib/proc_sys_reset_v5_0_13 \
-  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/system/ip/system_rst_clk_wiz_0_50M_0/sim/system_rst_clk_wiz_0_50M_0.vhd" \
--endlib
--makelib ies_lib/generic_baseblocks_v2_1_0 \
-  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
--endlib
--makelib ies_lib/axi_register_slice_v2_1_19 \
-  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/4d88/hdl/axi_register_slice_v2_1_vl_rfs.v" \
--endlib
--makelib ies_lib/axi_data_fifo_v2_1_18 \
-  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/5b9c/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
--endlib
--makelib ies_lib/axi_crossbar_v2_1_20 \
-  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/ace7/hdl/axi_crossbar_v2_1_vl_rfs.v" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/proc_common_v3_00_a/hdl/src/vhdl/system_video_dynclk_0_conv_funs_pkg.vhd" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/proc_common_v3_00_a/hdl/src/vhdl/system_video_dynclk_0_proc_common_pkg.vhd" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/proc_common_v3_00_a/hdl/src/vhdl/system_video_dynclk_0_ipif_pkg.vhd" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/proc_common_v3_00_a/hdl/src/vhdl/system_video_dynclk_0_family_support.vhd" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/proc_common_v3_00_a/hdl/src/vhdl/system_video_dynclk_0_family.vhd" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/proc_common_v3_00_a/hdl/src/vhdl/system_video_dynclk_0_soft_reset.vhd" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/proc_common_v3_00_a/hdl/src/vhdl/system_video_dynclk_0_pselect_f.vhd" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/axi_lite_ipif_v1_01_a/hdl/src/vhdl/system_video_dynclk_0_address_decoder.vhd" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/axi_lite_ipif_v1_01_a/hdl/src/vhdl/system_video_dynclk_0_slave_attachment.vhd" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/axi_lite_ipif_v1_01_a/hdl/src/vhdl/system_video_dynclk_0_axi_lite_ipif.vhd" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/system_video_dynclk_0_clk_wiz_drp.vhd" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/system_video_dynclk_0_axi_clk_config.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/system/ip/system_xbar_0/sim/system_xbar_0.v" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/system_video_dynclk_0_clk_wiz.v" \
+  "../../../bd/system/ip/system_video_dynclk_0_1/system_video_dynclk_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_vtg_0_1/sim/system_vtg_0.vhd" \
+-endlib
+-makelib ies_lib/xlconcat_v2_1_3 \
+  "../../../../SoCar.srcs/sources_1/bd/system/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_xlconcat_0_0_1/sim/system_xlconcat_0_0.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/system/ipshared/5011/src/pwm_gen_module.vhd" \
   "../../../bd/system/ipshared/5011/hdl/pwm_gen_v1_0_S00_AXI.vhd" \
   "../../../bd/system/ipshared/5011/hdl/pwm_gen_v1_0.vhd" \
   "../../../bd/system/ip/system_pwm_gen_0_0_1/sim/system_pwm_gen_0_0.vhd" \
-  "../../../bd/system/ip/system_pwm_gen_0_1/sim/system_pwm_gen_0_1.vhd" \
+  "../../../bd/system/ip/system_pwm_gen_1_0_1/sim/system_pwm_gen_1_0.vhd" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_19 \
   "../../../../SoCar.srcs/sources_1/bd/system/ipshared/c83a/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_auto_pc_0/sim/system_auto_pc_0.v" \
   "../../../bd/system/ip/system_auto_pc_1/sim/system_auto_pc_1.v" \
-  "../../../bd/system/ip/system_auto_pc_2/sim/system_auto_pc_2.v" \
+  "../../../bd/system/ip/system_auto_pc_2_1/sim/system_auto_pc_2.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/system/sim/system.vhd" \
