@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Sun Apr 18 18:25:47 2021
-| Host             : DavidC-Desktop running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date             : Thu Apr 29 15:07:45 2021
+| Host             : ramsey-VirtualBox running 64-bit Ubuntu 20.04.2 LTS
 | Command          : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
 | Design           : system_wrapper
 | Device           : xc7z010clg400-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.894        |
+| Total On-Chip Power (W)  | 1.896        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.765        |
-| Device Static (W)        | 0.128        |
+| Dynamic (W)              | 1.767        |
+| Device Static (W)        | 0.129        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 63.2         |
-| Junction Temperature (C) | 46.8         |
+| Max Ambient (C)          | 63.1         |
+| Junction Temperature (C) | 46.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,21 +53,21 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.048 |       12 |       --- |             --- |
-| Slice Logic              |     0.011 |    21562 |       --- |             --- |
-|   LUT as Logic           |     0.009 |     7477 |     17600 |           42.48 |
-|   CARRY4                 |    <0.001 |      244 |      4400 |            5.55 |
-|   Register               |    <0.001 |    10707 |     35200 |           30.42 |
+| Slice Logic              |     0.012 |    22297 |       --- |             --- |
+|   LUT as Logic           |     0.010 |     7720 |     17600 |           43.86 |
+|   CARRY4                 |    <0.001 |      276 |      4400 |            6.27 |
+|   Register               |    <0.001 |    11116 |     35200 |           31.58 |
 |   F7/F8 Muxes            |    <0.001 |      786 |     17600 |            4.47 |
 |   LUT as Distributed RAM |    <0.001 |       62 |      6000 |            1.03 |
 |   LUT as Shift Register  |    <0.001 |      229 |      6000 |            3.82 |
-|   Others                 |     0.000 |      766 |       --- |             --- |
-| Signals                  |     0.014 |    15584 |       --- |             --- |
+|   Others                 |     0.000 |      772 |       --- |             --- |
+| Signals                  |     0.014 |    16126 |       --- |             --- |
 | Block RAM                |     0.006 |     10.5 |        60 |           17.50 |
 | MMCM                     |     0.191 |        2 |         2 |          100.00 |
-| I/O                      |     0.084 |       23 |       100 |           23.00 |
+| I/O                      |     0.085 |       25 |       100 |           25.00 |
 | PS7                      |     1.412 |        1 |       --- |             --- |
-| Static Power             |     0.128 |          |           |                 |
-| Total                    |     1.893 |          |           |                 |
+| Static Power             |     0.129 |          |           |                 |
+| Total                    |     1.895 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,9 +77,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.095 |       0.087 |      0.008 |
+| Vccint    |       1.000 |     0.096 |       0.088 |      0.008 |
 | Vccaux    |       1.800 |     0.138 |       0.129 |      0.009 |
-| Vcco33    |       3.300 |     0.011 |       0.010 |      0.001 |
+| Vcco33    |       3.300 |     0.012 |       0.011 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -162,19 +162,19 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| system_wrapper            |     1.765 |
+| system_wrapper            |     1.767 |
 |   cam_gpio_tri_iobuf_0    |     0.004 |
 |   cam_iic_scl_iobuf       |     0.004 |
 |   cam_iic_sda_iobuf       |     0.004 |
-|   system_i                |     1.752 |
+|   system_i                |     1.753 |
 |     AXI_BayerToRGB_1      |     0.003 |
 |       U0                  |     0.003 |
 |     AXI_GammaCorrection_0 |     0.004 |
 |       U0                  |     0.004 |
 |     MIPI_CSI_2_RX_0       |     0.008 |
 |       U0                  |     0.008 |
-|     MIPI_D_PHY_RX_0       |     0.053 |
-|       U0                  |     0.053 |
+|     MIPI_D_PHY_RX_0       |     0.054 |
+|       U0                  |     0.054 |
 |     axi_mem_intercon_1    |     0.001 |
 |       s00_couplers        |     0.001 |
 |     axi_vdma_0            |     0.026 |
@@ -191,8 +191,8 @@ Table of Contents
 |       inst                |     0.006 |
 |     video_dynclk          |     0.108 |
 |       inst                |     0.108 |
-|     vtg                   |     0.014 |
-|       U0                  |     0.014 |
+|     vtg                   |     0.013 |
+|       U0                  |     0.013 |
 +---------------------------+-----------+
 
 

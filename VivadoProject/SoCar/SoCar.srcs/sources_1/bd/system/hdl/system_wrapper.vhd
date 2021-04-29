@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Sun Apr 18 18:08:33 2021
---Host        : DavidC-Desktop running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+--Date        : Thu Apr 29 14:57:53 2021
+--Host        : ramsey-VirtualBox running 64-bit Ubuntu 20.04.2 LTS
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
 --Purpose     : IP block netlist
@@ -34,6 +34,8 @@ entity system_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    PWM0_0 : out STD_LOGIC;
+    PWM0_1 : out STD_LOGIC;
     cam_gpio_tri_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
     cam_iic_scl_io : inout STD_LOGIC;
     cam_iic_sda_io : inout STD_LOGIC;
@@ -65,8 +67,6 @@ architecture STRUCTURE of system_wrapper is
     hdmi_tx_clk_n : out STD_LOGIC;
     hdmi_tx_data_p : out STD_LOGIC_VECTOR ( 2 downto 0 );
     hdmi_tx_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    dphy_hs_clock_clk_p : in STD_LOGIC;
-    dphy_hs_clock_clk_n : in STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -82,6 +82,8 @@ architecture STRUCTURE of system_wrapper is
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    dphy_hs_clock_clk_p : in STD_LOGIC;
+    dphy_hs_clock_clk_n : in STD_LOGIC;
     cam_iic_sda_i : in STD_LOGIC;
     cam_iic_sda_o : out STD_LOGIC;
     cam_iic_sda_t : out STD_LOGIC;
@@ -96,7 +98,9 @@ architecture STRUCTURE of system_wrapper is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     cam_gpio_tri_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     cam_gpio_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
-    cam_gpio_tri_t : out STD_LOGIC_VECTOR ( 0 to 0 )
+    cam_gpio_tri_t : out STD_LOGIC_VECTOR ( 0 to 0 );
+    PWM0_0 : out STD_LOGIC;
+    PWM0_1 : out STD_LOGIC
   );
   end component system;
   component IOBUF is
@@ -162,6 +166,8 @@ system_i: component system
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      PWM0_0 => PWM0_0,
+      PWM0_1 => PWM0_1,
       cam_gpio_tri_i(0) => cam_gpio_tri_i_0(0),
       cam_gpio_tri_o(0) => cam_gpio_tri_o_0(0),
       cam_gpio_tri_t(0) => cam_gpio_tri_t_0(0),
