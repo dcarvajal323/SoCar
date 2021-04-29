@@ -3,12 +3,26 @@
 #include <iostream>
 #include <cmath>
 #include <pthread.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <poll.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <unistd.h>
+#include <sys/mman.h>
+#include <sys/ioctl.h>
+
+#include "charvideo_ioctl.h"
+
 
 using namespace std;
 using namespace cv;
 
 #define STEERING_DRIVER "/proc/pwmgen"
 #define SPEED_DRIVER "/proc/pwmgen"
+#define CAMERA_DRIVER "/dev/video"
+#define IMAGE_NAME "cameraout.ppm"
 #define PWM_RANGE 1048575
 #define BUFF_SIZE 20
 
@@ -29,11 +43,60 @@ int findDuty(int angle);
 
 int main() {
 	pthread_t speedThread;
-	pthread_create(&speedThread, NULL, &setMotorSpeed, NULL);	
+	//pthread_create(&speedThread, NULL, &setMotorSpeed, NULL);	
 
 	while (1) {
+
+		int fd;
+		fd = open(CAMERA_DRIVER, O_RDONLY);
+		if (fd < 0) {
+			printf("Can't open %s\n", CAMERA_DRIVER);
+			return -1;
+		}
+
+		//Print the VDMA's status to kernel log
+		ioctl(fd, CHARVIDEO_IOCSTATUS);
+
+		//Get the image sizes from the video driver
+		int h, w, l;
+		h = ioctl(fd, CHARVIDEO_IOCQHEIGHT);
+		w = ioctl(fd, CHARVIDEO_IOCQWIDTH);
+		l = ioctl(fd, CHARVIDEO_IOCQPIXELLEN);
+
+		unsigned char buf[h * w * l];
+		read(fd, buf, w * h * l);
+		close(fd);
+
+		char filename[100];
+		sprintf(filename, "%s", IMAGE_NAME);
+		FILE *outimg = fopen(filename, "wt");
+
+		//if the pixel length is only 1 byte, then the image is grayscale (ppm format 5)
+		if (l == 1)
+			fprintf(outimg, "P5\n%d %d\n%d\n", w, h, 255);
+		else
+			fprintf(outimg, "P6\n%d %d\n%d\n", w, h, 255);
+
+		printf("Opened %s\n", filename);
+
+		//The images are stored in the VDMAs in the BGR format so it must be
+		//changed to RGB for human understandable images
+
+		if (l != 1) { //BGR to RGB
+			for (int i = 0; i < w * h * l; i += 3) {
+				uint8_t aux = buf[i + 2];
+				buf[i + 2] = buf[i];
+				buf[i] = aux;
+			}
+		}
+
+		fwrite(buf, 1, w * h * l, outimg);
+
+		fclose(outimg);
+
+
 		//Load the image
-		Mat img = imread("resizedCut.jpg");
+		Mat img = imread(IMAGE_NAME);
 		//Mat img = imread("resizedOrig.jpeg");
 		//Mat img = imread("oneLane.jpg");
 		//Mat img = imread("road-image.jpg");
@@ -128,14 +191,14 @@ int main() {
 		char outString[BUFF_SIZE];
 		sprintf(outString, "%d", dutyCount);
 		
-		FILE *steeringDriver = fopen(STEERING_DRIVER, "w");
+		cout << steeringAngle << "\n";
+
+		FILE *steeringDriver = nullptr;//fopen(STEERING_DRIVER, "w");
 		if (steeringDriver) {
 			fputs(outString, steeringDriver);
 			fseek(steeringDriver, 0, SEEK_SET);
+			fclose(steeringDriver);
 		}
-
-		fclose(steeringDriver);
-
 	}
 
 	return 0;

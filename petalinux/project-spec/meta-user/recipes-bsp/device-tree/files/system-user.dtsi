@@ -1,4 +1,4 @@
-/include/ "system-conf.dtsi"
+/*/include/ "system-conf.dtsi"
 / {
 	pwmgen: pwm_gen@43c00000 {
 		clock-names = "s00_axi_aclk";
@@ -8,4 +8,4 @@
 		xlnx,s00-axi-addr-width = <0x4>;
 		xlnx,s00-axi-data-width = <0x20>;
 	};
-};
+};*/

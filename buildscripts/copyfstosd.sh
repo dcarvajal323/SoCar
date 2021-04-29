@@ -4,6 +4,8 @@ ROOT_PART="/media/ramsey/ROOTFS"
 BUILD_INC="../build_include"
 
 cd $PETA_ROOT
+sudo rm ${BOOT_PART}/BOOT.BIN
+sudo rm ${BOOT_PART}/image.ub
 sudo cp images/linux/BOOT.BIN $BOOT_PART
 sudo cp images/linux/image.ub $BOOT_PART
 umount /mnt

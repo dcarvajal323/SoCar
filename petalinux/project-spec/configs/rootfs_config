@@ -3945,7 +3945,8 @@ CONFIG_imagefeature-hwcodecs=y
 #
 # modules 
 #
-CONFIG_pwmgen=y
+# CONFIG_pwmgen is not set
+CONFIG_vdmadriver=y
 
 #
 # user packages 
